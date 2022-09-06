@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-06T05:22:20 IST" name="Suite" finished-at="2022-09-06T05:26:01 IST" duration-ms="220373">
+    <groups>
+    </groups>
+    <test started-at="2022-09-06T05:22:20 IST" name="Test" finished-at="2022-09-06T05:26:01 IST" duration-ms="220373">
+      <class name="otter.Automation.DemoPro1.TestCase1">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:otter.Automation.DemoPro1.TestCase1@6fdbe764]" started-at="2022-09-06T05:22:20 IST" name="openBrowser" finished-at="2022-09-06T05:22:29 IST" duration-ms="9165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="testflow()[pri:0, instance:otter.Automation.DemoPro1.TestCase1@6fdbe764]" started-at="2022-09-06T05:22:30 IST" name="testflow" finished-at="2022-09-06T05:26:00 IST" duration-ms="210785" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testflow -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:otter.Automation.DemoPro1.TestCase1@6fdbe764]" started-at="2022-09-06T05:26:00 IST" name="quit" finished-at="2022-09-06T05:26:01 IST" duration-ms="348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- otter.Automation.DemoPro1.TestCase1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
