@@ -244,7 +244,7 @@ public class TestCase1 {
 	
 					Thread.sleep(3000);
 					driver.findElement(By.xpath("//button[@title='Save']")).click();
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				
 	}
 	
@@ -252,6 +252,7 @@ public class TestCase1 {
 	public void quit()  {
 		
 					//Close the browser
+		        // Test
 			
 					driver.quit();
 				
