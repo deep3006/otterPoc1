@@ -1,6 +1,7 @@
 package otter.Automation.DemoPro1;
 
 import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,7 +27,7 @@ public class TestCase1 {
 			
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
-				Thread.sleep(5000);
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 				
 				//Launching URL
 				
@@ -38,26 +39,32 @@ public class TestCase1 {
 	public void testflow() throws InterruptedException {
 		
 				//Login
-				Thread.sleep(5000);
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 				
 				driver.findElement(By.id("username")).sendKeys("deepaksharma1@cunning-shark-aqbmcl.com");
 				driver.findElement(By.id("password")).sendKeys("Deep@Sales123");
 				driver.findElement(By.id("Login")).click();
+				Thread.sleep(5000);
 	//}
 
 	//@AfterMethod
 	//public void openSalesApp() throws InterruptedException {
 		
 				//Open Sales Apps
-		
-		         Thread.sleep(15000);
+				
+				
+				 Thread.sleep(5000);		
+				// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		         driver.findElement(By.xpath("//button[contains(@class,'slds-button slds-icon-waffle_container slds-context-bar__button slds-button forceHeaderButton salesforceIdentityAppLauncherHeader')]")).click();
 		
-		         Thread.sleep(10000);
+		         Thread.sleep(5000);
+		         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		         driver.findElement(By.xpath("//input[@class='slds-input']")).sendKeys("Sales");
 		
+		         Thread.sleep(5000);
 		         driver.findElement(By.xpath("//*[@id=\"07p5g000000ySPfAAM\"]/div/lightning-formatted-rich-text/span/p")).click();
-		         Thread.sleep(10000);
+		         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		         Thread.sleep(5000);
 	//}
 
 	//@AfterMethod
@@ -75,12 +82,15 @@ public class TestCase1 {
 				 //Open Latest Lead
 					
 					Thread.sleep(5000);
+				//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 					driver.findElement(By.xpath("//button[@title='Select a List View']")).click();
-					Thread.sleep(7000);
+			
+					Thread.sleep(5000);
+				//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 					driver.findElement(By.xpath("//span[text()='All Open Leads']")).click();
 				
-				
 					Thread.sleep(5000);
+				//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 					driver.findElement(By.xpath("//a[@data-Refid='recordId']")).click();
 				
 	//}
@@ -89,17 +99,17 @@ public class TestCase1 {
 	//public void editLead() throws InterruptedException {
 		
 					// Edit Lead
-		
-					Thread.sleep(7000);
-					driver.findElement(By.xpath("//button[text()='Edit']")).click();
 					Thread.sleep(5000);
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+					driver.findElement(By.xpath("//button[text()='Edit']")).click();
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 					driver.findElement(By.xpath("//input[@name='NumberofLocations__c']")).clear();
 					driver.findElement(By.xpath("//input[@name='NumberofLocations__c']")).sendKeys("20");
 		
 					driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-		
-					Thread.sleep(10000);
+					Thread.sleep(5000);
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	//}
 	
 	//@AfterMethod
@@ -117,8 +127,8 @@ public class TestCase1 {
 				
 					System.out.print("***********************Exit**********************************");
 				
-				
-					Thread.sleep(7000);
+					Thread.sleep(5000);
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 					driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[2]/div[2]/div/div[3]/button[2]")).click();
 				
 	/*}
@@ -127,8 +137,8 @@ public class TestCase1 {
 	public void openOpportunity() throws InterruptedException {
 		
 		*/			//Open the Opportunity
-		
 					Thread.sleep(5000);
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 					driver.findElement(By.xpath("//div/div[2]/div/div[3]/div/div/div/div[2]/div[2]/a")).click();
 	/*}
 	
@@ -136,12 +146,12 @@ public class TestCase1 {
 	public void addProducts() throws InterruptedException {
 		
 		*/			//Add Products
-		
-					Thread.sleep(7000);
+					Thread.sleep(5000);
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
 					driver.findElement(By.xpath("//span[@title='Products']")).click();
 				
-
 					Thread.sleep(5000);
+					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 					driver.findElement(By.xpath("//a[@title='Add Products']")).click();
 				
 				

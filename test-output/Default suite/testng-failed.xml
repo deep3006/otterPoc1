@@ -5,16 +5,9 @@
     <classes>
       <class name="otter.Automation.DemoPro1.TestCase1">
         <methods>
-          <include name="backToOpportunity"/>
-          <include name="wonOpportunity"/>
-          <include name="addProducts"/>
-          <include name="convertLead"/>
           <include name="openBrowser"/>
-          <include name="editLead"/>
-          <include name="openLead"/>
-          <include name="openOpportunity"/>
-          <include name="openSalesApp"/>
-          <include name="login"/>
+          <include name="testflow"/>
+          <include name="quit"/>
         </methods>
       </class> <!-- otter.Automation.DemoPro1.TestCase1 -->
     </classes>
