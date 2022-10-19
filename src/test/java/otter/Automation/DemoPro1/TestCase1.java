@@ -150,7 +150,7 @@ public class TestCase1 {
 				
 					Thread.sleep(5000);
 					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-					driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[2]/div[2]/div/div[3]/button[2]")).click();
+					driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[2]/div[2]/div/div[3]/span/button")).click();
 				
 	/*}
 	
