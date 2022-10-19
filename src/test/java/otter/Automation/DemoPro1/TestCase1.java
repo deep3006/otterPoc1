@@ -1,18 +1,29 @@
 package otter.Automation.DemoPro1;
 
+import org.testng.annotations.Test;
+import org.testng.internal.TestResult;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
+import java.lang.reflect.Field;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.rcarz.jiraclient.BasicCredentials;
+import net.rcarz.jiraclient.Issue;
+import net.rcarz.jiraclient.JiraClient;
+import net.rcarz.jiraclient.JiraException;
 
 
 public class TestCase1 {
@@ -24,7 +35,17 @@ public class TestCase1 {
 	public void openBrowser() throws InterruptedException{
 		
 				//Launching Browser
-			
+		
+			//For Selenium Grid only
+			/*	DesiredCapabilities dr = null;
+				dr = DesiredCapabilities.chrome();
+				dr.setBrowserName("chrome");
+				dr.setPlatform(Platform.WIN10);
+				System.setProperty("webdriver.chrome.driver", "C:\\Users\\Deepak Sharma\\Downloads\\chromedriver.exe");
+				
+				driver = new RemoteWebDriver(new URL("http://192.168.0.126:4444/wd/hub"), dr);
+			*/
+		
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -32,7 +53,7 @@ public class TestCase1 {
 				//Launching URL
 				
 				driver.get("https://cunning-shark-aqbmcl-dev-ed.my.salesforce.com/");
-				driver.manage().window().maximize();
+				driver.manage().window().fullscreen();
 	}
 	
 	@Test
@@ -245,16 +266,30 @@ public class TestCase1 {
 					Thread.sleep(3000);
 					driver.findElement(By.xpath("//button[@title='Save']")).click();
 					Thread.sleep(4000);
-				
+					
+									
 	}
 	
 	@AfterMethod
-	public void quit()  {
+	public void quit(TestResult result) throws JiraException  {
 		
 					//Close the browser
-		        // Test
-			
+	
 					driver.quit();
+					
+				/*	//If test case fails then log the defect in Jira
+				 * 
+					if(result.getStatus() == TestResult.FAILURE) {
+						
+					BasicCredentials creds = new BasicCredentials("admin","admin");
+					JiraClient jira = new JiraClient("JiraserverURL", creds);
+					Issue issueName = jira.createIssue("ProjectName","Bug").field("Field.SUMMARY", result.getMethod() +"is Failed Due to: "+ result.getThrowable().toString()).execute();
+					System.out.println("Issue is created in Jira with Issue Key"+issueName.getKey());
+						
+					}
+					*/
+						
+					
 				
 	}
 		

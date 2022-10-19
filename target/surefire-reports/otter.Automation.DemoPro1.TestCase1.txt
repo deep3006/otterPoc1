@@ -1,4 +1,23 @@
 -------------------------------------------------------------------------------
 Test set: otter.Automation.DemoPro1.TestCase1
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.422 s - in otter.Automation.DemoPro1.TestCase1
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 30.569 s <<< FAILURE! - in otter.Automation.DemoPro1.TestCase1
+testflow(otter.Automation.DemoPro1.TestCase1)  Time elapsed: 25.745 s  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: 
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=106.0.5249.103)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-QP605AK', ip: '192.168.0.126', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f228354c03a74d0f82b8a3ca477e5063, findElement {using=xpath, value=//a[@title='Leads']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.103, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\DEEPAK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52853}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52853/devtoo..., se:cdpVersion: 106.0.5249.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f228354c03a74d0f82b8a3ca477e5063
+	at otter.Automation.DemoPro1.TestCase1.testflow(TestCase1.java:97)
+
+quit(otter.Automation.DemoPro1.TestCase1)  Time elapsed: 25.75 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @AfterMethod annotated quit.
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+
